@@ -1,0 +1,94 @@
+cff-version: 1.2.0
+message: "If you use AdaptVisR or the CIAM framework in your research, please cite our paper."
+
+authors:
+  - family-names: "Ye"
+    given-names: "Chen"
+    affiliation: "Hunan International Economics University"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+    email: "chen.ye@hieu.edu.cn"
+  
+  - family-names: "Qin"
+    given-names: "Xiaoqun"
+    affiliation: "Hunan International Economics University"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+    email: "xq.qin@hieu.edu.cn"
+
+title: "AdaptVisR: Causal Intervention Attention Mechanism for Trustworthy Visual Recognition"
+version: 1.0.0
+date-released: 2025-02-23
+doi: 10.5281/zenodo.XXXXXXX
+
+repository-code: "https://github.com/CIAM-Lab/AdaptVisR"
+license: "MIT"
+license-url: "https://opensource.org/licenses/MIT"
+
+keywords:
+  - "causal inference"
+  - "information bottleneck"
+  - "attention mechanism"
+  - "domain adaptation"
+  - "out-of-distribution generalization"
+  - "trustworthy AI"
+  - "visual recognition"
+  - "R language"
+  - "deep learning"
+
+preferred-citation:
+  type: conference-paper
+  title: "Causal Intervention Attention Mechanism (CIAM): A Unified Framework for Trustworthy Visual Recognition under Domain Shift"
+  authors:
+    - family-names: "Ye"
+      given-names: "Chen"
+    - family-names: "Qin"
+      given-names: "Xiaoqun"
+  
+  conference:
+    name: "International Conference on Medical Image Computing and Computer-Assisted Intervention"
+    acronym: "MICCAI"
+    year: 2025
+    city: "Montreal"
+    country: "Canada"
+  
+  doi: "10.1007/978-3-031-XXXXX-X_XX"
+  url: "https://link.springer.com/chapter/10.1007/978-3-031-XXXXX-X_XX"
+
+  abstract: "This paper presents CIAM, a unified framework integrating information bottleneck optimization with causal inference for trustworthy visual recognition under domain shift. We prove the Information Bottleneck Synergy Theorem, providing optimality conditions for multi-attention design. CIAM achieves 5.2-11.7% OOD accuracy gains and 86.1% accuracy with only 5 samples per class."
+
+  keywords:
+    - "Causal Inference"
+    - "Information Bottleneck"
+    - "Attention Mechanism"
+    - "Domain Adaptation"
+    - "Trustworthy AI"
+
+references:
+  - type: software
+    title: "AdaptVisR: R package for Causal Intervention Attention Mechanism"
+    authors:
+      - family-names: "Ye"
+        given-names: "Chen"
+      - family-names: "Qin"
+        given-names: "Xiaoqun"
+    version: 1.0.0
+    year: 2025
+    url: "https://github.com/CIAM-Lab/AdaptVisR"
+
+  - type: article
+    title: "Information Bottleneck Synergy Theorem for Multi-Attention Design"
+    authors:
+      - family-names: "Ye"
+        given-names: "Chen"
+      - family-names: "Qin"
+        given-names: "Xiaoqun"
+    journal: "MICCAI 2025 Proceedings"
+    year: 2025
+    pages: "236-246"
+
+contact:
+  - name: "Chen Ye"
+    email: "chen.ye@hieu.edu.cn"
+  - name: "Xiaoqun Qin"
+    email: "xq.qin@hieu.edu.cn"
+
+acknowledgments: "This work was supported by the Hunan Provincial Department of Education Scientific Research Project (25C1230). Numerical calculations were performed on the high-performance computing cluster at Hunan International Economics University."
