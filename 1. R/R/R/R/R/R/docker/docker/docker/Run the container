@@ -1,0 +1,8 @@
+# Interactive R session
+docker run -it --rm adaptvisr
+
+# Run a specific script
+docker run -it --rm -v $(pwd):/workspace adaptvisr Rscript experiments/01-ood-generalization/run.R
+
+# With GPU support
+docker run -it --rm --gpus all adaptvisr
