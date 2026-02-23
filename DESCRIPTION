@@ -1,0 +1,43 @@
+Package: AdaptVisR
+Title: Causal Intervention Attention Mechanism for Trustworthy Visual Recognition
+Version: 1.0.0
+Date: 2025-02-23
+Authors@R: c(
+    person("Chen", "Ye", 
+           email = "chen.ye@hieu.edu.cn",
+           role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0000-0000-0000")),
+    person("Xiaoqun", "Qin",
+           email = "xq.qin@hieu.edu.cn",
+           role = "aut",
+           comment = c(ORCID = "0000-0000-0000-0000"))
+  )
+Description: Full-stack adaptive learning system implementing the Causal Intervention 
+    Attention Mechanism (CIAM) for trustworthy visual recognition under domain shift.
+    Provides information bottleneck optimization, causal inference, and hierarchical
+    adaptive collaboration. Includes replication scripts for MICCAI 2025 paper results.
+License: MIT + file LICENSE
+URL: https://github.com/CIAM-Lab/AdaptVisR
+BugReports: https://github.com/CIAM-Lab/AdaptVisR/issues
+Depends: 
+    R (>= 4.0.0)
+Imports:
+    torch (>= 0.9.0),
+    reticulate (>= 1.26),
+    keras (>= 2.13),
+    tensorflow (>= 2.13),
+    shapviz (>= 0.9.0),
+    ggplot2 (>= 3.4.0),
+    dplyr (>= 1.1.0),
+    tidyr (>= 1.3.0)
+Suggests:
+    testthat (>= 3.0.0),
+    knitr (>= 1.42),
+    rmarkdown (>= 2.20),
+    pkgdown (>= 2.0.0)
+VignetteBuilder: knitr
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3提交信息：Add DESCRIPTION file for R package
+扩展描述：Define package metadata, dependencies, and authors for AdaptVisR
