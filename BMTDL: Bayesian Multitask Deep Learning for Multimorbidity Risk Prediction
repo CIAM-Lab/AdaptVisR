@@ -1,0 +1,100 @@
+BMTDL: Bayesian Multitask Deep Learning for Multimorbidity Risk Prediction
+This repository contains the official implementation of the Bayesian Multitask Deep Learning (BMTDL) framework proposed in the paper:
+Uncertainty-Aware Multimorbidity Risk Prediction via Bayesian Multitask Deep Learning
+Ye Chen, Xiaoqun Qin, Shouping Chen
+BMC Medical Informatics and Decision Making (Under Review)
+📌 Overview
+BMTDL is a unified deep learning framework for predicting the risk of multiple chronic diseases simultaneously. It integrates:
+• Multimodal data fusion (EHR, clinical text, wearable time-series) via cross-modal attention
+• Dynamic gated multitask learning to capture time-varying inter-disease associations
+• Bayesian uncertainty propagation using covariance priors and task-correlated Monte Carlo (MC) dropout
+• Causal longitudinal modeling (CLSTM-BPR) to discover dynamic causal pathways from physiological time-series
+https://graphical_abstract.png
+✨ Key Features
+• ✅ End-to-end training for joint prediction of multiple chronic conditions
+• ✅ Uncertainty quantification with well-calibrated confidence intervals
+• ✅ Missing data robustness via modality masking in the fusion module
+• ✅ Causal discovery from wearable device data
+• ✅ Comprehensive evaluation including ablation studies, sensitivity analysis, and clinical case studies
+📊 Results on NHANES (5 Diseases: DM, HTN, CKD, CHD, Stroke)
+
+Model	Average AUC	Δ (vs. Single-task)	Key Feature
+BMTDL (Ours)	0.83	+6.8%	Uncertainty-aware + causal
+MTDL (w/o Bayesian)	0.81	+4.1%	Multi-task only
+GATET	0.80	+3.8%	Graph-based
+Random Forest	0.74	–	Single-task
+High-uncertainty samples (12.7% of cohort) showed 4.1× higher misclassification and 2.3× higher intervention response odds.
+• Simulated clinical deployment suggested 42% potential reduction in misdiagnoses by flagging uncertain predictions.
+🛠️ Requirements
+The code is implemented in Python 3.8+ with PyTorch. Main dependencies:
+torch>=1.9.0
+numpy>=1.19.0
+pandas>=1.2.0
+scikit-learn>=0.24.0
+transformers>=4.5.0  # for BioClinicalBERT
+rpy2>=3.4.0          # for R integration (optional)
+Install all dependencies via:
+pip install -r requirements.txt
+Quick Start
+1. Clone the repository
+git clone https://github.com/CIAM-Lab/AdaptVisR.git
+cd AdaptVisR
+2. Data preparation
+• Download NHANES data (2011–2018 cycles) from CDC website
+• Place raw data in ./data/raw/
+• Run preprocessing script:
+python preprocess.py --config configs/preprocess.yaml
+3. Train the model
+python train.py --config configs/bmtdl.yaml
+4. Evaluate and generate figures
+python evaluate.py --checkpoint checkpoints/best_model.pt
+python visualize.py --results results/
+Repository Structure
+AdaptVisR/
+├── configs/                # Configuration files
+│   ├── preprocess.yaml
+│   ├── bmtdl.yaml
+│   └── ablation.yaml
+├── data/                   # Data directory (not included)
+│   ├── raw/
+│   └── processed/
+├── models/                 # Model definitions
+│   ├── fusion.py           # Cross-modal attention
+│   ├── gated_mtl.py        # Dynamic gated MTL
+│   ├── bayesian.py         # Covariance prior + MC dropout
+│   └── clstm_bpr.py        # Causal longitudinal module
+├── utils/                  # Utility functions
+│   ├── metrics.py
+│   ├── visualization.py
+│   └── causal.py
+├── scripts/                # Training/evaluation scripts
+│   ├── train.py
+│   ├── evaluate.py
+│   └── visualize.py
+├── results/                 # Outputs (figures, tables)
+├── requirements.txt
+├── README.md
+└── LICENSE
+Reproducing Paper Results
+Run the following commands to reproduce key results:
+Result	Command
+Main results (Table 2)	python evaluate.py --config configs/bmtdl.yaml --table main
+Ablation studies (Table 4)	python evaluate.py --config configs/ablation.yaml --table ablation
+Uncertainty analysis (Figure 2)	python visualize.py --analysis uncertainty
+Causal graphs (Figure 4)	python visualize.py --analysis causal --patient_id 123
+Citation
+If you find this code or the associated paper useful for your research, please cite:
+@article{chen2026uncertainty,
+  title={Uncertainty-Aware Multimorbidity Risk Prediction via Bayesian Multitask Deep Learning},
+  author={Chen, Ye and Qin, Xiaoqun and Chen, Shouping},
+  journal={BMC Medical Informatics and Decision Making},
+  year={2026},
+  note={Under Review}
+}
+License
+This project is licensed under the MIT License – see the LICENSE file for details.
+🤝 Contact
+For questions or issues, please open an issue on GitHub or contact:
+• Ye Chen: [ye.chen@example.edu]
+• Xiaoqun Qin: [xiaoqun.qin@example.edu]
+Note: This repository is under active development. If you encounter any problems, please let us know.
